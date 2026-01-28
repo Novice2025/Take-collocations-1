@@ -1,0 +1,2023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NEXTATION - The Versatile Verb: To Take</title>
+    <meta name="description" content="Master 30+ uses of the English verb 'to take' with interactive examples and ADHD-friendly design. (Português: levar, pegar, tirar)">
+    <meta name="theme-color" content="#02030b">
+    <style>
+        /* CSS Variables - Simplified for robustness */
+        :root {
+            --bg-main: #02030b;
+            --card-bg: rgba(15, 18, 40, 0.92);
+            --card-soft-bg: rgba(18, 21, 50, 0.88);
+            --accent-cyan: #4ef2ff;
+            --accent-pink: #ff2f92;
+            --accent-green: #4dff9b;
+            --accent-yellow: #ffe25f;
+            --accent-purple: #aa5dff;
+            --muted: rgba(255,255,255,0.65);
+            --border-glow: rgba(120,120,255,0.45);
+            --shadow-soft: 0 0 20px rgba(0,0,0,0.65);
+            --radius-lg: 22px;
+            --radius-md: 16px;
+            --radius-sm: 10px;
+            --transition-fast: 0.18s ease-out;
+            --transition-med: 0.28s ease-out;
+        }
+
+        /* Base Resets and Global Styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body {
+            width: 100%; height: 100%;
+            background: var(--bg-main); /* Using variable */
+            color: #fff;
+            font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            font-size: 16px; line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Font Declarations for specific elements */
+        .lesson-title, .panel-title, .situation-title, .expression-card-title, .expression-card-pronunciation, .expression-category-title, .exercise-section h4 {
+            font-family: 'Space Grotesk', 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+        }
+
+        /* Main App Container */
+        #app {
+            width: 100%; min-height: 100vh;
+            display: flex; flex-direction: column;
+        }
+
+        .app-container {
+            width: 100%; min-height: 100vh;
+            background: var(--bg-main); /* Using variable */
+            display: flex; flex-direction: column;
+        }
+
+        .neon-top-bar {
+            width: 100%; height: 6px;
+            background: linear-gradient(90deg, #00f5ff, #ff2f92, #ffe25f, #4dff9b);
+            box-shadow: 0 0 20px rgba(78, 242, 255, 0.6);
+        }
+
+        .app-main {
+            flex: 1;
+            display: flex; flex-direction: column;
+            padding: 40px 20px;
+            max-width: 1200px; margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Lesson View */
+        .lesson-view {
+            width: 100%;
+        }
+
+        .lesson-header {
+            text-align: center; margin-bottom: 40px;
+        }
+
+        .lesson-title {
+            font-size: 48px; font-weight: 700; letter-spacing: 0.12em;
+            background: linear-gradient(90deg, var(--accent-cyan), var(--accent-pink)); /* Using variables */
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 0 0 15px 0;
+        }
+
+        .lesson-description {
+            color: var(--muted); /* Using variable */
+            font-size: 18px; margin: 0;
+        }
+
+        /* Content Panel */
+        .content-panel {
+            background: var(--card-bg); /* Using variable */
+            border: 1px solid var(--border-glow); /* Using variable */
+            border-radius: var(--radius-lg); /* Using variable */
+            padding: 40px;
+            box-shadow: var(--shadow-soft); /* Using variable */
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .panel-title {
+            font-size: 32px; font-weight: 700;
+            color: var(--accent-cyan); /* Using variable */
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        /* Expression Card */
+        .expression-card {
+            background: var(--card-soft-bg); /* Using variable */
+            border: 1px solid rgba(78, 242, 255, 0.3); /* Specific border for expression card */
+            border-radius: var(--radius-md); /* Using variable */
+            padding: 30px; margin-bottom: 30px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(78, 242, 255, 0.2);
+        }
+
+        .expression-card-title {
+            font-size: 36px; font-weight: 700;
+            color: var(--accent-yellow); /* Using variable */
+            margin-bottom: 10px;
+        }
+
+        .expression-card-pronunciation {
+            font-size: 20px; font-style: italic;
+            color: var(--accent-purple); /* Using variable */
+            margin-bottom: 20px;
+        }
+
+        .expression-card-description {
+            font-size: 18px;
+            color: #ffffff;
+        }
+
+        /* Exercise Sections */
+        .exercise-section {
+            background: var(--card-soft-bg);
+            border: 1px solid rgba(255, 47, 146, 0.3);
+            border-radius: var(--radius-md);
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 0 10px rgba(255, 47, 146, 0.2);
+            text-align: left;
+        }
+
+        .exercise-section h4 {
+            font-size: 24px;
+            color: var(--accent-pink);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .exercise-section p {
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .exercise-section .model-sentence { /* This class will now be hidden */
+            display: none;
+            font-style: italic;
+            color: var(--muted);
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        .exercise-section textarea {
+            width: 100%;
+            min-height: 80px;
+            padding: 10px;
+            border: 1px solid rgba(255, 47, 146, 0.5);
+            border-radius: var(--radius-sm);
+            background: rgba(15, 18, 40, 0.7);
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            resize: vertical;
+            transition: border-color var(--transition-fast);
+        }
+
+        .exercise-section textarea:focus {
+            outline: none;
+            border-color: var(--accent-pink);
+            box-shadow: 0 0 8px rgba(255, 47, 146, 0.6);
+        }
+
+        /* Specific styling for Fill in the Blanks */
+        .fill-in-blanks-section {
+            margin-top: 20px; /* Space between sentence writing and fill-in-blanks */
+            padding-top: 20px;
+            border-top: 1px dashed rgba(255, 255, 255, 0.2);
+        }
+
+        .fill-in-blanks-section p {
+            margin-bottom: 10px;
+        }
+
+        .fill-in-blanks-section .input-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .fill-in-blanks-section input[type="text"] {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid rgba(255, 47, 146, 0.5);
+            border-radius: var(--radius-sm);
+            background: rgba(15, 18, 40, 0.7);
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            transition: border-color var(--transition-fast);
+        }
+
+        .fill-in-blanks-section input[type="text"]:focus {
+            outline: none;
+            border-color: var(--accent-pink);
+            box-shadow: 0 0 8px rgba(255, 47, 146, 0.6);
+        }
+
+        /* Check Answer Button */
+        .check-btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: var(--radius-sm);
+            background: var(--accent-green);
+            color: var(--bg-main);
+            font-weight: 700;
+            cursor: pointer;
+            transition: background var(--transition-fast), transform var(--transition-fast);
+            white-space: nowrap; /* Prevent text wrapping */
+        }
+
+        .check-btn:hover {
+            background: #39e680; /* Slightly darker green */
+            transform: translateY(-1px);
+        }
+
+        .feedback-message {
+            margin-top: 10px;
+            font-weight: 600;
+            text-align: center;
+            padding: 8px;
+            border-radius: var(--radius-sm);
+            display: none; /* Hidden by default */
+        }
+
+        .feedback-message.correct {
+            background: rgba(77, 255, 155, 0.2);
+            color: var(--accent-green);
+        }
+
+        .feedback-message.incorrect {
+            background: rgba(255, 47, 146, 0.2);
+            color: var(--accent-pink);
+        }
+
+        /* Expression Selector Buttons */
+        .expression-selector {
+            display: flex; flex-wrap: wrap;
+            gap: 10px; justify-content: center;
+            margin-top: 30px;
+        }
+
+        .expression-selector .btn {
+            padding: 10px 18px;
+            border: 1px solid rgba(170, 93, 255, 0.4); /* Specific border for selector buttons */
+            border-radius: var(--radius-sm); /* Using variable */
+            background: rgba(25, 28, 60, 0.8); /* Specific background */
+            color: #ffffff;
+            font-size: 14px; font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            backdrop-filter: blur(5px);
+        }
+
+        .expression-selector .btn:hover {
+            background: rgba(40, 45, 90, 0.9);
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 15px rgba(170, 93, 255, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .expression-selector .btn.active {
+            background: var(--accent-purple); /* Active state background */
+            border-color: var(--accent-purple);
+            box-shadow: 0 0 20px rgba(170, 93, 255, 0.8);
+            transform: translateY(-1px);
+            font-weight: 700;
+        }
+
+        /* Situations Grid */
+        .situations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .situation-card {
+            background: var(--card-soft-bg); /* Using variable */
+            border: 1px solid rgba(78, 242, 255, 0.3); /* Specific border for situation card */
+            border-radius: var(--radius-md); /* Using variable */
+            padding: 25px;
+            box-shadow: 0 0 10px rgba(78, 242, 255, 0.2);
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .situation-title {
+            font-size: 22px; font-weight: 600;
+            color: var(--accent-cyan); /* Using variable */
+            margin-bottom: 10px;
+        }
+
+        .situation-card .example {
+            font-size: 16px;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .situation-card .context {
+            font-size: 14px; font-style: italic;
+            color: var(--muted); /* Using variable */
+        }
+
+        /* Tab Navigation (Global Categories) */
+        .tab-navigation {
+            display: flex; justify-content: center;
+            margin-bottom: 30px;
+            background: rgba(15, 18, 40, 0.7);
+            border-radius: var(--radius-md);
+            padding: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.4);
+        }
+
+        .tab-navigation .tab-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: var(--radius-sm);
+            background: transparent;
+            color: var(--muted);
+            font-size: 16px; font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .tab-navigation .tab-btn:hover {
+            color: #ffffff;
+            background: rgba(78, 242, 255, 0.1);
+        }
+
+        .tab-navigation .tab-btn.active {
+            background: var(--accent-cyan);
+            color: var(--bg-main);
+            box-shadow: 0 0 15px rgba(78, 242, 255, 0.6);
+            font-weight: 700;
+        }
+
+        /* Category Specific Tab Navigation (Expression/Situations) */
+        .category-tab-navigation {
+            display: flex; justify-content: center;
+            margin-top: 20px;
+            margin-bottom: 30px;
+            background: rgba(18, 21, 50, 0.7);
+            border-radius: var(--radius-md);
+            padding: 6px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        .category-tab-navigation .category-tab-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: var(--radius-sm);
+            background: transparent;
+            color: var(--muted);
+            font-size: 15px; font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .category-tab-navigation .category-tab-btn:hover {
+            color: #ffffff;
+            background: rgba(255, 47, 146, 0.1);
+        }
+
+        .category-tab-navigation .category-tab-btn.active {
+            background: var(--accent-pink);
+            color: var(--bg-main);
+            box-shadow: 0 0 12px rgba(255, 47, 146, 0.5);
+            font-weight: 600;
+        }
+
+        /* Expression Category Title */
+        .expression-category-title {
+            font-size: 28px; font-weight: 700;
+            color: var(--accent-green);
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        /* Footer Navigation (Back/Next) */
+        .tab-footer {
+            display: flex; justify-content: space-between;
+            margin-top: 40px;
+            padding: 15px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .tab-footer .nav-btn {
+            padding: 12px 25px;
+            border: 1px solid var(--accent-purple);
+            border-radius: var(--radius-md);
+            background: rgba(170, 93, 255, 0.2);
+            color: #ffffff;
+            font-size: 16px; font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            display: flex; align-items: center;
+            gap: 8px;
+        }
+
+        .tab-footer .nav-btn:hover {
+            background: var(--accent-purple);
+            box-shadow: 0 0 20px rgba(170, 93, 255, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .tab-footer .nav-btn .material-icons {
+            font-size: 20px;
+        }
+
+        /* Keyframe Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .app-main {
+                padding: 20px 15px;
+            }
+            .lesson-title {
+                font-size: 36px;
+            }
+            .panel-title {
+                font-size: 28px;
+            }
+            .expression-card-title {
+                font-size: 30px;
+            }
+            .situations-grid {
+                grid-template-columns: 1fr;
+            }
+            .tab-navigation, .category-tab-navigation {
+                flex-wrap: wrap;
+                gap: 5px;
+            }
+            .tab-navigation .tab-btn, .category-tab-navigation .category-tab-btn {
+                flex-grow: 1;
+                text-align: center;
+            }
+            .tab-footer .nav-btn {
+                flex-grow: 1;
+                justify-content: center;
+            }
+        }
+    </style>
+    <!-- Google Fonts for 'Montserrat' and 'Space Grotesk' -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div id="app"></div>
+
+    <script>
+        // GLOBAL STATE
+        const state = {
+            currentLesson: {
+                title: "The Versatile Verb: To Take 🚀",
+                description: "Master 30+ uses of the English verb 'to take' with interactive examples and ADHD-friendly design. (Português: levar, pegar, tirar)",
+                categories: [
+                    {
+                        name: "Part 1: Most Common Expressions",
+                        expressions: [
+                            {
+                                "id": "take-a-break",
+                                "expression": "Take a break ☕",
+                                "pronunciation": "/teɪk ə breɪk/",
+                                "whenToUse": "To stop working for a short period to rest or relax.",
+                                "situations": [
+                                    { "situation": "Work Fatigue", "example": "I've been working for hours; I need to take a break.", "context": "Português: Eu tenho trabalhado por horas; preciso fazer uma pausa." },
+                                    { "situation": "Study Session", "example": "Let's take a break from studying and grab some coffee.", "context": "Português: Vamos fazer uma pausa nos estudos e pegar um café." },
+                                    { "situation": "Long Journey", "example": "The driver decided to take a break at the next service station.", "context": "Português: O motorista decidiu fazer uma pausa na próxima estação de serviço." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take a break' in the **present continuous tense** with the pronoun **'she'**.",
+                                    "model": "She is taking a break from her work.", // Model answer for sentence writing (hidden)
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: After two hours, he decided to ______ a break.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Ela precisa fazer uma pausa para descansar.",
+                                    "answer": "She needs to take a break to rest."
+                                }
+                            },
+                            {
+                                "id": "take-a-shower",
+                                "expression": "Take a shower 🚿",
+                                "pronunciation": "/teɪk ə ˈʃaʊər/",
+                                "whenToUse": "To wash oneself in a shower.",
+                                "situations": [
+                                    { "situation": "Morning Routine", "example": "I always take a shower before going to work.", "context": "Português: Eu sempre tomo banho antes de ir para o trabalho." },
+                                    { "situation": "After Exercise", "example": "After the gym, I'll take a shower to feel refreshed.", "context": "Português: Depois da academia, vou tomar banho para me sentir revigorado." },
+                                    { "situation": "Before Bed", "example": "It's nice to take a warm shower before bed.", "context": "Português: É bom tomar um banho quente antes de dormir." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take a shower' in the **past simple tense** with the pronoun **'they'**.",
+                                    "model": "They took a shower after their long hike.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: He likes to ______ a cold shower in the morning.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Você deveria tomar um banho depois de nadar.",
+                                    "answer": "You should take a shower after swimming."
+                                }
+                            },
+                            {
+                                "id": "take-a-picture",
+                                "expression": "Take a picture 📸",
+                                "pronunciation": "/teɪk ə ˈpɪktʃər/",
+                                "whenToUse": "To capture an image with a camera.",
+                                "situations": [
+                                    { "situation": "Tourist Sightseeing", "example": "Let's take a picture in front of the Eiffel Tower.", "context": "Português: Vamos tirar uma foto em frente à Torre Eiffel." },
+                                    { "situation": "Family Event", "example": "Can you take a picture of us all together?", "context": "Português: Você pode tirar uma foto de todos nós juntos?" },
+                                    { "situation": "Memorable Moment", "example": "I want to take a picture to remember this beautiful sunset.", "context": "Português: Quero tirar uma foto para lembrar este lindo pôr do sol." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take a picture' in the **future simple tense** with the pronoun **'I'**.",
+                                    "model": "I will take a picture of the whole group.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: Don't forget to ______ a picture of the cake!",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Ele tirou muitas fotos nas férias.",
+                                    "answer": "He took many pictures on vacation."
+                                }
+                            },
+                            {
+                                "id": "take-a-taxi",
+                                "expression": "Take a taxi 🚕",
+                                "pronunciation": "/teɪk ə ˈtæksi/",
+                                "whenToUse": "To use a taxi for transportation.",
+                                "situations": [
+                                    { "situation": "Late for Appointment", "example": "We're running late; we should take a taxi.", "context": "Português: Estamos atrasados; deveríamos pegar um táxi." },
+                                    { "situation": "Heavy Luggage", "example": "With all this luggage, it's better to take a taxi to the airport.", "context": "Português: Com toda esta bagagem, é melhor pegar um táxi para o aeroporto." },
+                                    { "situation": "Night Out", "example": "After the party, we'll take a taxi home.", "context": "Português: Depois da festa, vamos pegar um táxi para casa." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take a taxi' in the **present perfect tense** with the pronoun **'we'**.",
+                                    "model": "We have taken a taxi several times this week.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: It's raining, let's ______ a taxi.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Eles sempre pegam um táxi para o centro da cidade.",
+                                    "answer": "They always take a taxi to the city center."
+                                }
+                            },
+                            {
+                                "id": "take-a-bus",
+                                "expression": "Take a bus 🚌",
+                                "pronunciation": "/teɪk ə bʌs/",
+                                "whenToUse": "To use a bus for transportation.",
+                                "situations": [
+                                    { "situation": "Daily Commute", "example": "I take a bus to work every morning.", "context": "Português: Eu pego um ônibus para o trabalho todas as manhãs." },
+                                    { "situation": "Exploring a City", "example": "To see the sights, we decided to take a bus tour.", "context": "Português: Para ver os pontos turísticos, decidimos fazer um passeio de ônibus." },
+                                    { "situation": "Saving Money", "example": "It's cheaper to take a bus than to drive.", "context": "Português: É mais barato pegar um ônibus do que dirigir." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take a bus' in the **past simple tense** with the pronoun **'he'**.",
+                                    "model": "He took a bus to the concert last night.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: She prefers to ______ the bus instead of walking.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Nós pegamos o ônibus errado por engano.",
+                                    "answer": "We took the wrong bus by mistake."
+                                }
+                            },
+                            {
+                                "id": "take-a-train",
+                                "expression": "Take a train 🚆",
+                                "pronunciation": "/teɪk ə treɪn/",
+                                "whenToUse": "To use a train for transportation.",
+                                "situations": [
+                                    { "situation": "Intercity Travel", "example": "For long distances, it's comfortable to take a train.", "context": "Português: Para longas distâncias, é confortável pegar um trem." },
+                                    { "situation": "Scenic Route", "example": "They decided to take a train through the mountains.", "context": "Português: Eles decidiram pegar um trem pelas montanhas." },
+                                    { "situation": "Commuting", "example": "Many people take a train to avoid traffic.", "context": "Português: Muitas pessoas pegam um trem para evitar o trânsito." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take a train' in the **future simple tense** with the pronoun **'you'**.",
+                                    "model": "You will take a train to visit your family next month.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: I always ______ the train when I travel to the capital.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Ele vai pegar o trem das 8h da manhã.",
+                                    "answer": "He will take the 8 AM train."
+                                }
+                            },
+                            {
+                                "id": "take-a-plane",
+                                "expression": "Take a plane ✈️",
+                                "pronunciation": "/teɪk ə pleɪn/",
+                                "whenToUse": "To travel by airplane.",
+                                "situations": [
+                                    { "situation": "International Travel", "example": "To get to Europe, you have to take a plane.", "context": "Português: Para chegar à Europa, você tem que pegar um avião." },
+                                    { "situation": "Business Trip", "example": "My boss will take a plane for his business trip next week.", "context": "Português: Meu chefe vai pegar um avião para sua viagem de negócios na próxima semana." },
+                                    { "situation": "Vacation", "example": "We're going to take a plane to the Caribbean for our vacation.", "context": "Português: Vamos pegar um avião para o Caribe nas nossas férias." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take a plane' in the **present perfect continuous tense** with the pronoun **'we'**.",
+                                    "model": "We have been taking a plane for all our international trips.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: They decided to ______ a plane to save time.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Eu nunca peguei um avião antes.",
+                                    "answer": "I have never taken a plane before."
+                                }
+                            },
+                            {
+                                "id": "take-a-nap",
+                                "expression": "Take a nap 😴",
+                                "pronunciation": "/teɪk ə næp/",
+                                "whenToUse": "To sleep for a short period, usually during the day.",
+                                "situations": [
+                                    { "situation": "Afternoon Tiredness", "example": "I'm so tired; I think I'll take a nap.", "context": "Português: Estou tão cansado; acho que vou tirar um cochilo." },
+                                    { "situation": "Baby's Routine", "example": "The baby takes a nap every afternoon.", "context": "Português: O bebê tira um cochilo todas as tardes." },
+                                    { "situation": "Weekend Relaxation", "example": "On weekends, I love to take a nap on the sofa.", "context": "Português: Nos fins de semana, adoro tirar um cochilo no sofá." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take a nap' in the **past continuous tense** with the pronoun **'he'**.",
+                                    "model": "He was taking a nap when the phone rang.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: She always feels better after she ______ a nap.",
+                                        "answer": "takes"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Você deveria tirar um cochilo para recarregar as energias.",
+                                    "answer": "You should take a nap to recharge your energy."
+                                }
+                            },
+                            {
+                                "id": "take-a-risk",
+                                "expression": "Take a risk 🎲",
+                                "pronunciation": "/teɪk ə rɪsk/",
+                                "whenToUse": "To do something that might have a negative outcome but could also lead to success.",
+                                "situations": [
+                                    { "situation": "Business Venture", "example": "Starting a new business always involves taking a risk.", "context": "Português: Abrir um novo negócio sempre envolve correr um risco." },
+                                    { "situation": "Career Change", "example": "She decided to take a risk and change her career path.", "context": "Português: Ela decidiu correr um risco e mudar sua trajetória profissional." },
+                                    { "situation": "Adventure Sports", "example": "Climbing that mountain was taking a huge risk.", "context": "Português: Escalar aquela montanha era correr um risco enorme." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take a risk' in the **present simple tense** with the pronoun **'I'**.",
+                                    "model": "I always take a risk when investing in new stocks.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: Sometimes you have to ______ a risk to achieve great things.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Ele nunca corre riscos desnecessários.",
+                                    "answer": "He never takes unnecessary risks."
+                                }
+                            },
+                            {
+                                "id": "take-a-chance",
+                                "expression": "Take a chance 🍀",
+                                "pronunciation": "/teɪk ə tʃæns/",
+                                "whenToUse": "To do something even though there is a risk, hoping for a positive result.",
+                                "situations": [
+                                    { "situation": "Job Interview", "example": "It's a tough job, but I'll take a chance and apply.", "context": "Português: É um trabalho difícil, mas vou arriscar e me candidatar." },
+                                    { "situation": "New Opportunity", "example": "You should take a chance on this new opportunity.", "context": "Português: Você deveria arriscar nesta nova oportunidade." },
+                                    { "situation": "Gambling", "example": "He decided to take a chance and bet all his money.", "context": "Português: Ele decidiu arriscar e apostar todo o seu dinheiro." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take a chance' in the **future simple tense** with the pronoun **'we'**.",
+                                    "model": "We will take a chance on the new restaurant tonight.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: Don't be afraid to ______ a chance on your dreams.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Ela arriscou e conseguiu o emprego.",
+                                    "answer": "She took a chance and got the job."
+                                }
+                            },
+                            {
+                                "id": "take-a-look",
+                                "expression": "Take a look 👀",
+                                "pronunciation": "/teɪk ə lʊk/",
+                                "whenToUse": "To examine or observe something.",
+                                "situations": [
+                                    { "situation": "Inspection", "example": "Take a look at this design.", "context": "Português: Dar uma olhada" },
+                                    { "situation": "Review", "example": "Can you take a look at my essay?", "context": "Português: Dar uma olhada" },
+                                    { "situation": "Observation", "example": "Take a look around the room.", "context": "Português: Dar uma olhada" }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take a look' in the **imperative form** with the pronoun **'you'** (implied).",
+                                    "model": "Take a look at the beautiful view!",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: Please ______ a look at this document before the meeting.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Você pode dar uma olhada nisso para mim?",
+                                    "answer": "Can you take a look at this for me?"
+                                }
+                            },
+                            {
+                                "id": "take-a-seat",
+                                "expression": "Take a seat 🪑",
+                                "pronunciation": "/teɪk ə sit/",
+                                "whenToUse": "To sit down.",
+                                "situations": [
+                                    { "situation": "Greeting", "example": "Please, take a seat.", "context": "Português: Sentar-se" },
+                                    { "situation": "Meeting", "example": "Everyone, take a seat.", "context": "Português: Sentar-se" },
+                                    { "situation": "Rest", "example": "Take a seat and relax.", "context": "Português: Sentar-se" }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take a seat' in the **imperative form** with the pronoun **'everyone'**.",
+                                    "model": "Everyone, please take a seat.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: The host asked us to ______ a seat.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Por favor, sente-se.",
+                                    "answer": "Please, take a seat."
+                                }
+                            },
+                            {
+                                "id": "take-a-walk",
+                                "expression": "Take a walk 🚶",
+                                "pronunciation": "/teɪk ə wɔk/",
+                                "whenToUse": "To go for a walk.",
+                                "situations": [
+                                    { "situation": "Leisure", "example": "I like to take a walk in the park every evening.", "context": "Português: Eu gosto de fazer uma caminhada no parque todas as noites." },
+                                    { "situation": "Stress Relief", "example": "When I'm stressed, I take a walk to clear my head.", "context": "Português: Quando estou estressado, faço uma caminhada para clarear a mente." },
+                                    { "situation": "Dog Exercise", "example": "We need to take the dog for a walk.", "context": "Português: Precisamos levar o cachorro para passear." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take a walk' in the **past simple tense** with the pronoun **'we'**.",
+                                    "model": "We took a walk along the beach yesterday.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: Let's ______ a walk to enjoy the fresh air.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Ele faz uma caminhada todas as manhãs.",
+                                    "answer": "He takes a walk every morning."
+                                }
+                            },
+                            {
+                                "id": "take-notes",
+                                "expression": "Take notes ✍️",
+                                "pronunciation": "/teɪk noʊts/",
+                                "whenToUse": "To write down important information from a lecture, meeting, or book.",
+                                "situations": [
+                                    { "situation": "Lecture", "example": "It's important to take notes during the professor's lecture.", "context": "Português: É importante fazer anotações durante a palestra do professor." },
+                                    { "situation": "Meeting", "example": "Please take notes of all the decisions made in this meeting.", "context": "Português: Por favor, faça anotações de todas as decisões tomadas nesta reunião." },
+                                    { "situation": "Research", "example": "I always take notes when I'm reading a research paper.", "context": "Português: Eu sempre faço anotações quando estou lendo um artigo de pesquisa." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take notes' in the **present simple tense** with the pronoun **'students'**.",
+                                    "model": "Students take notes to remember key information.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: She always ______ detailed notes during class.",
+                                        "answer": "takes"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Você deve fazer anotações para não esquecer.",
+                                    "answer": "You should take notes so you don't forget."
+                                }
+                            },
+                            {
+                                "id": "take-responsibility",
+                                "expression": "Take responsibility 🛡️",
+                                "pronunciation": "/teɪk rɪˌspɒnsəˈbɪlɪti/",
+                                "whenToUse": "To accept the blame or credit for something.",
+                                "situations": [
+                                    { "situation": "Mistake", "example": "It was my fault, and I take full responsibility.", "context": "Português: Foi minha culpa, e eu assumo total responsabilidade." },
+                                    { "situation": "Leadership", "example": "A good leader knows when to take responsibility for their team's actions.", "context": "Português: Um bom líder sabe quando assumir a responsabilidade pelas ações de sua equipe." },
+                                    { "situation": "Project Outcome", "example": "He took responsibility for the success of the project.", "context": "Português: Ele assumiu a responsabilidade pelo sucesso do projeto." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take responsibility' in the **future simple tense** with the pronoun **'he'**.",
+                                    "model": "He will take responsibility for the error.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: It's important to ______ responsibility for your own choices.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Ela assumiu a responsabilidade por seus erros.",
+                                    "answer": "She took responsibility for her mistakes."
+                                }
+                            },
+                            {
+                                "id": "take-care",
+                                "expression": "Take care 👋",
+                                "pronunciation": "/teɪk kɛər/",
+                                "whenToUse": "To be careful; also used as a farewell.",
+                                "situations": [
+                                    { "situation": "Farewell", "example": "I'm leaving now, take care!", "context": "Português: Estou indo agora, se cuida!" },
+                                    { "situation": "Warning", "example": "Take care on the icy roads.", "context": "Português: Tenha cuidado nas estradas geladas." },
+                                    { "situation": "Looking After", "example": "Please take care of my plants while I'm away.", "context": "Português: Por favor, cuide das minhas plantas enquanto estou fora." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take care' in the **imperative form** with the pronoun **'you'** (implied).",
+                                    "model": "Take care of yourself during the trip.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: Remember to ______ care of your health.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Se cuide e me ligue quando chegar.",
+                                    "answer": "Take care and call me when you arrive."
+                                }
+                            },
+                            {
+                                "id": "take-advantage-of",
+                                "expression": "Take advantage of ✨",
+                                "pronunciation": "/teɪk ədˈvæntɪdʒ ɒv/",
+                                "whenToUse": "To make good use of an opportunity; sometimes implies exploiting.",
+                                "situations": [
+                                    { "situation": "Opportunity", "example": "You should take advantage of this special offer.", "context": "Português: Você deveria aproveitar esta oferta especial." },
+                                    { "situation": "Resource", "example": "Let's take advantage of the good weather and go for a picnic.", "context": "Português: Vamos aproveitar o bom tempo e fazer um piquenique." },
+                                    { "situation": "Exploitation (negative)", "example": "He always tries to take advantage of others' kindness.", "context": "Português: Ele sempre tenta se aproveitar da bondade dos outros." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take advantage of' in the **present simple tense** with the pronoun **'we'**.",
+                                    "model": "We take advantage of every opportunity to learn.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: Don't let anyone ______ advantage of your generosity.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Ela aproveitou a chance para viajar.",
+                                    "answer": "She took advantage of the chance to travel."
+                                }
+                            },
+                            {
+                                "id": "take-place",
+                                "expression": "Take place 📍",
+                                "pronunciation": "/teɪk pleɪs/",
+                                "whenToUse": "To happen; to occur.",
+                                "situations": [
+                                    { "situation": "Event Scheduling", "example": "The concert will take place next Saturday.", "context": "Português: O show acontecerá no próximo sábado." },
+                                    { "situation": "Historical Event", "example": "The meeting took place in the main hall.", "context": "Português: A reunião ocorreu no salão principal." },
+                                    { "situation": "Competition", "example": "The Olympics take place every four years.", "context": "Português: As Olimpíadas acontecem a cada quatro anos." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take place' in the **future simple tense** with the noun **'the ceremony'**.",
+                                    "model": "The ceremony will take place at sunset.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: The wedding will ______ place at the beach.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "A conferência acontecerá em Londres.",
+                                    "answer": "The conference will take place in London."
+                                }
+                            },
+                            {
+                                "id": "take-part-in",
+                                "expression": "Take part in 🤝",
+                                "pronunciation": "/teɪk pɑːrt ɪn/",
+                                "whenToUse": "To participate in an activity or event.",
+                                "situations": [
+                                    { "situation": "Competition", "example": "She decided to take part in the marathon.", "context": "Português: Ela decidiu participar da maratona." },
+                                    { "situation": "Discussion", "example": "Everyone should take part in the discussion.", "context": "Português: Todos deveriam participar da discussão." },
+                                    { "situation": "Volunteer Work", "example": "They took part in a local clean-up event.", "context": "Português: Eles participaram de um evento de limpeza local." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take part in' in the **past simple tense** with the pronoun **'I'**.",
+                                    "model": "I took part in the school play last year.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: Many students will ______ part in the science fair.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Você vai participar do projeto?",
+                                    "answer": "Will you take part in the project?"
+                                }
+                            },
+                            {
+                                "id": "take-off",
+                                "expression": "Take off 🚀",
+                                "pronunciation": "/teɪk ɒf/",
+                                "whenToUse": "To remove clothing; for an aircraft, to leave the ground; to become successful.",
+                                "situations": [
+                                    { "situation": "Clothing", "example": "Please take off your shoes before entering.", "context": "Português: Por favor, tire seus sapatos antes de entrar." },
+                                    { "situation": "Aircraft", "example": "The plane will take off in ten minutes.", "context": "Português: O avião vai decolar em dez minutos." },
+                                    { "situation": "Success", "example": "Her career really took off after that movie.", "context": "Português: A carreira dela realmente decolou depois daquele filme." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take off' (meaning 'remove clothing') in the **imperative form** with the pronoun **'you'** (implied).",
+                                    "model": "Take off your jacket, it's warm inside.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: The rocket is ready to ______ off.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "O avião decolou no horário.",
+                                    "answer": "The plane took off on time."
+                                }
+                            },
+                            {
+                                "id": "take-on",
+                                "expression": "Take on 🏋️",
+                                "pronunciation": "/teɪk ɒn/",
+                                "whenToUse": "To accept a new responsibility or challenge; to employ someone.",
+                                "situations": [
+                                    { "situation": "Responsibility", "example": "I decided to take on the new project.", "context": "Português: Eu decidi assumir o novo projeto." },
+                                    { "situation": "Challenge", "example": "He's ready to take on any challenge.", "context": "Português: Ele está pronto para enfrentar qualquer desafio." },
+                                    { "situation": "Employment", "example": "The company is looking to take on new staff.", "context": "Português: A empresa está procurando contratar novos funcionários." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take on' (meaning 'accept responsibility') in the **present perfect tense** with the pronoun **'she'**.",
+                                    "model": "She has taken on too many tasks.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: Are you willing to ______ on this extra work?",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Ele assumiu a tarefa com entusiasmo.",
+                                    "answer": "He took on the task with enthusiasm."
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        name: "Part 2: More Idiomatic Expressions",
+                        expressions: [
+                            {
+                                "id": "cant-take-it-anymore",
+                                "expression": "Can’t take it anymore 😤",
+                                "pronunciation": "/kænt teɪk ɪt ˌɛniˈmɔːr/",
+                                "whenToUse": "To be unable to endure a difficult or unpleasant situation any longer.",
+                                "situations": [
+                                    { "situation": "Stressful Job", "example": "The pressure at work is too much; I can't take it anymore.", "context": "Português: A pressão no trabalho é demais; não aguento mais." },
+                                    { "situation": "Loud Noise", "example": "The constant noise from the construction site, I can't take it anymore!", "context": "Português: O barulho constante do canteiro de obras, não aguento mais!" },
+                                    { "situation": "Difficult Relationship", "example": "Their arguments are endless; she can't take it anymore.", "context": "Português: As discussões deles são intermináveis; ela não aguenta mais." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'can't take it anymore' in the **present simple tense** with the pronoun **'I'**.",
+                                    "model": "I can't take it anymore; I need a vacation.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: After weeks of sleepless nights, he just couldn't ______ it anymore.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Eu não aguento mais essa situação.",
+                                    "answer": "I can't take this situation anymore."
+                                }
+                            },
+                            {
+                                "id": "hard-to-take",
+                                "expression": "Hard to take 😔",
+                                "pronunciation": "/hɑːrd tu teɪk/",
+                                "whenToUse": "Difficult to accept or deal with, often emotionally.",
+                                "situations": [
+                                    { "situation": "Bad News", "example": "The news of his departure was hard to take.", "context": "Português: A notícia da partida dele foi difícil de aceitar." },
+                                    { "situation": "Criticism", "example": "Sometimes, constructive criticism can still be hard to take.", "context": "Português: Às vezes, críticas construtivas ainda podem ser difíceis de aceitar." },
+                                    { "situation": "Loss", "example": "Losing the game was hard to take after all their effort.", "context": "Português: Perder o jogo foi difícil de aceitar depois de todo o esforço deles." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'hard to take' in the **past simple tense** with the noun **'the defeat'**.",
+                                    "model": "The defeat was hard to take for the team.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: Her sudden resignation was very ______ to take.",
+                                        "answer": "hard"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "A verdade pode ser difícil de aceitar.",
+                                    "answer": "The truth can be hard to take."
+                                }
+                            },
+                            {
+                                "id": "have-what-it-takes",
+                                "expression": "Have what it takes 💪",
+                                "pronunciation": "/hæv wɒt ɪt teɪks/",
+                                "whenToUse": "To possess the necessary qualities, skills, or courage to succeed.",
+                                "situations": [
+                                    { "situation": "Challenging Role", "example": "She has what it takes to be a great leader.", "context": "Português: Ela tem o que é preciso para ser uma grande líder." },
+                                    { "situation": "Tough Competition", "example": "Do you think he has what it takes to win the championship?", "context": "Português: Você acha que ele tem o que é preciso para vencer o campeonato?" },
+                                    { "situation": "New Project", "example": "I'm not sure if I have what it takes to complete this complex project.", "context": "Português: Não tenho certeza se tenho o que é preciso para completar este projeto complexo." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'have what it takes' in the **present simple tense** with the pronoun **'he'**.",
+                                    "model": "He has what it takes to become a successful entrepreneur.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: To climb Everest, you need to ______ what it takes.",
+                                        "answer": "have"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Você tem o que é preciso para ter sucesso.",
+                                    "answer": "You have what it takes to succeed."
+                                }
+                            },
+                            {
+                                "id": "i-take-it-that",
+                                "expression": "I take it (that)… 🤔",
+                                "pronunciation": "/aɪ teɪk ɪt (ðæt)/",
+                                "whenToUse": "Used to express an assumption or inference based on what has been said or observed.",
+                                "situations": [
+                                    { "situation": "Drawing Conclusion", "example": "I take it you're not coming to the party tonight?", "context": "Português: Eu presumo que você não vem à festa hoje à noite?" },
+                                    { "situation": "Observing Behavior", "example": "You're wearing a suit; I take it you have an important meeting.", "context": "Português: Você está de terno; presumo que tenha uma reunião importante." },
+                                    { "situation": "Confirming Information", "example": "So, I take it the project is approved?", "context": "Português: Então, presumo que o projeto está aprovado?" }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'I take it (that)…' to make an assumption about someone being busy.",
+                                    "model": "I take it you're very busy with work these days.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: You're smiling, so I ______ it you got the job.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Eu presumo que você está pronto para ir.",
+                                    "answer": "I take it you are ready to go."
+                                }
+                            },
+                            {
+                                "id": "point-taken",
+                                "expression": "Point taken ✅",
+                                "pronunciation": "/pɔɪnt ˈteɪkən/",
+                                "whenToUse": "Used to acknowledge and accept a valid argument or criticism.",
+                                "situations": [
+                                    { "situation": "Accepting Feedback", "example": "Point taken, I'll try to be more careful next time.", "context": "Português: Entendido, vou tentar ser mais cuidadoso da próxima vez." },
+                                    { "situation": "Acknowledging Argument", "example": "You've made a strong case; point taken.", "context": "Português: Você apresentou um bom argumento; entendido." },
+                                    { "situation": "During a Debate", "example": "Okay, point taken, but consider my perspective too.", "context": "Português: Ok, entendido, mas considere minha perspectiva também." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence where someone acknowledges a valid criticism using 'point taken'.",
+                                    "model": "My manager said I need to improve my time management. Point taken.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: You're right about that, ______ taken.",
+                                        "answer": "point"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Seu ponto foi bem recebido.",
+                                    "answer": "Your point was well taken."
+                                }
+                            },
+                            {
+                                "id": "take-up-something",
+                                "expression": "Take up something 💡",
+                                "pronunciation": "/teɪk ʌp ˈsʌmθɪŋ/",
+                                "whenToUse": "To start a new hobby, sport, or activity; to occupy space or time.",
+                                "situations": [
+                                    { "situation": "New Hobby", "example": "She decided to take up painting in her free time.", "context": "Português: Ela decidiu começar a pintar em seu tempo livre." },
+                                    { "situation": "Space Occupation", "example": "This new sofa takes up too much space in the living room.", "context": "Português: Este novo sofá ocupa muito espaço na sala de estar." },
+                                    { "situation": "Time Consumption", "example": "Studying for the exam takes up most of my evenings.", "context": "Português: Estudar para o exame ocupa a maior parte das minhas noites." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take up something' (meaning 'start a hobby') in the **past simple tense** with the pronoun **'he'**.",
+                                    "model": "He took up cycling after moving to the countryside.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: I want to ______ up a new language.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Ele começou a tocar violão no ano passado.",
+                                    "answer": "He took up the guitar last year."
+                                }
+                            },
+                            {
+                                "id": "take-the-lead",
+                                "expression": "Take the lead 🌟",
+                                "pronunciation": "/teɪk ðə liːd/",
+                                "whenToUse": "To be in charge or to be the first to do something.",
+                                "situations": [
+                                    { "situation": "Project Management", "example": "Someone needs to take the lead on this project.", "context": "Português: Alguém precisa assumir a liderança neste projeto." },
+                                    { "situation": "Group Activity", "example": "She always takes the lead in group discussions.", "context": "Português: Ela sempre assume a liderança nas discussões em grupo." },
+                                    { "situation": "Innovation", "example": "Our company aims to take the lead in sustainable technology.", "context": "Português: Nossa empresa visa assumir a liderança em tecnologia sustentável." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take the lead' in the **future simple tense** with the pronoun **'you'**.",
+                                    "model": "You should take the lead in organizing the event.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: It's time for someone to ______ the lead and make a decision.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Ele assumiu a liderança na equipe.",
+                                    "answer": "He took the lead in the team."
+                                }
+                            },
+                            {
+                                "id": "take-something-into-account",
+                                "expression": "Take something into account 📝",
+                                "pronunciation": "/teɪk ˈsʌmθɪŋ ˈɪntuː əˈkaʊnt/",
+                                "whenToUse": "To consider something when making a decision or judgment.",
+                                "situations": [
+                                    { "situation": "Decision Making", "example": "We need to take all factors into account before deciding.", "context": "Português: Precisamos levar todos os fatores em consideração antes de decidir." },
+                                    { "situation": "Planning", "example": "When planning the trip, remember to take the weather into account.", "context": "Português: Ao planejar a viagem, lembre-se de levar o clima em consideração." },
+                                    { "situation": "Evaluation", "example": "The jury took her past record into account when sentencing.", "context": "Português: O júri levou em consideração o histórico dela ao sentenciar." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take something into account' in the **present perfect tense** with the pronoun **'they'**.",
+                                    "model": "They have taken your suggestions into account.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: Always ______ the risks into account before starting a new venture.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Você deve levar em consideração a opinião dela.",
+                                    "answer": "You should take her opinion into account."
+                                }
+                            },
+                            {
+                                "id": "take-a-step-back",
+                                "expression": "Take a step back 🚶",
+                                "pronunciation": "/teɪk ə stɛp bæk/",
+                                "whenToUse": "To temporarily withdraw from a situation to gain perspective or reduce involvement.",
+                                "situations": [
+                                    { "situation": "Overwhelm", "example": "I'm too involved; I need to take a step back and reassess.", "context": "Português: Estou muito envolvido; preciso dar um passo para trás e reavaliar." },
+                                    { "situation": "Conflict", "example": "Before reacting, try to take a step back and calm down.", "context": "Português: Antes de reagir, tente dar um passo para trás e se acalmar." },
+                                    { "situation": "Project Difficulty", "example": "The team decided to take a step back and rethink their strategy.", "context": "Português: A equipe decidiu dar um passo para trás e repensar sua estratégia." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take a step back' in the **imperative form** with the pronoun **'you'** (implied).",
+                                    "model": "Take a step back and look at the bigger picture.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: Sometimes, you need to ______ a step back to see things clearly.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Ele deu um passo para trás para evitar a discussão.",
+                                    "answer": "He took a step back to avoid the argument."
+                                }
+                            },
+                            {
+                                "id": "take-in-information",
+                                "expression": "Take in the [information, news] 🧠",
+                                "pronunciation": "/teɪk ɪn ðə [ˌɪnfərˈmeɪʃən, nuːz]/",
+                                "whenToUse": "To understand and absorb information or news.",
+                                "situations": [
+                                    { "situation": "Complex Lecture", "example": "It was a lot of information to take in during the lecture.", "context": "Português: Foi muita informação para absorver durante a palestra." },
+                                    { "situation": "Shocking News", "example": "The news was so sudden, I needed time to take it all in.", "context": "Português: A notícia foi tão repentina, precisei de tempo para assimilar tudo." },
+                                    { "situation": "Reading a Report", "example": "I'm trying to take in all the details of this report.", "context": "Português: Estou tentando absorver todos os detalhes deste relatório." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take in the information' in the **past simple tense** with the pronoun **'we'**.",
+                                    "model": "We took in all the information from the workshop.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: It's hard to ______ in all this new data at once.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Ele levou um tempo para absorver a notícia.",
+                                    "answer": "He took some time to take in the news."
+                                }
+                            },
+                            {
+                                "id": "take-up-jeans-pants",
+                                "expression": "Take up a pair of [jeans, pants] 👖",
+                                "pronunciation": "/teɪk ʌp ə pɛər ɒv [dʒiːnz, pænts]/",
+                                "whenToUse": "To shorten the length of an item of clothing, typically trousers or jeans.",
+                                "situations": [
+                                    { "situation": "Tailoring", "example": "These jeans are too long; I need to take them up.", "context": "Português: Estas calças jeans estão muito longas; preciso fazer a barra." },
+                                    { "situation": "New Purchase", "example": "I bought new pants, but I'll have to take them up a bit.", "context": "Português: Comprei calças novas, mas terei que fazer a barra um pouco." },
+                                    { "situation": "Growing Child", "example": "My son grew so fast, I had to take up all his pants.", "context": "Português: Meu filho cresceu tão rápido, tive que fazer a barra de todas as calças dele." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take up a pair of jeans' in the **future simple tense** with the pronoun **'I'**.",
+                                    "model": "I will take up this pair of jeans tomorrow.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: She asked the tailor to ______ up her new dress.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Preciso fazer a barra das minhas calças.",
+                                    "answer": "I need to take up my pants."
+                                }
+                            },
+                            {
+                                "id": "take-after",
+                                "expression": "Take after 🧬",
+                                "pronunciation": "/teɪk ˈæftər/",
+                                "whenToUse": "To resemble a parent or older relative in appearance or character.",
+                                "situations": [
+                                    { "situation": "Family Resemblance", "example": "She really takes after her mother with her artistic talent.", "context": "Português: Ela realmente se parece com a mãe dela com seu talento artístico." },
+                                    { "situation": "Personality Traits", "example": "He takes after his grandfather; very calm and wise.", "context": "Português: Ele se parece com o avô dele; muito calmo e sábio." },
+                                    { "situation": "Physical Appearance", "example": "Do you think the baby takes after his father?", "context": "Português: Você acha que o bebê se parece com o pai dele?" }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take after' in the **present simple tense** with the pronoun **'he'**.",
+                                    "model": "He takes after his father in his love for sports.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: The child seems to ______ after his uncle's sense of humor.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Ela se parece com a avó dela.",
+                                    "answer": "She takes after her grandmother."
+                                }
+                            },
+                            {
+                                "id": "take-back",
+                                "expression": "Take back ↩️",
+                                "pronunciation": "/teɪk bæk/",
+                                "whenToUse": "To return something; to retract a statement.",
+                                "situations": [
+                                    { "situation": "Returning Item", "example": "I need to take back this shirt; it's too small.", "context": "Português: Preciso devolver esta camisa; é muito pequena." },
+                                    { "situation": "Retracting Statement", "example": "I take back what I said; I didn't mean to offend you.", "context": "Português: Retiro o que disse; não quis ofender você." },
+                                    { "situation": "Recalling Memory", "example": "That song takes me back to my childhood.", "context": "Português: Aquela música me faz lembrar da minha infância." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take back' (meaning 'return an item') in the **present perfect tense** with the pronoun **'I'**.",
+                                    "model": "I have taken back the faulty product.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: You can ______ back the book if you don't like it.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Eu retiro minhas palavras.",
+                                    "answer": "I take back my words."
+                                }
+                            },
+                            {
+                                "id": "take-down",
+                                "expression": "Take down ⬇️",
+                                "pronunciation": "/teɪk daʊn/",
+                                "whenToUse": "To remove something from a high place; to write down information; to defeat someone.",
+                                "situations": [
+                                    { "situation": "Removing Decoration", "example": "Let's take down the Christmas decorations.", "context": "Português: Vamos tirar as decorações de Natal." },
+                                    { "situation": "Writing Notes", "example": "Please take down these instructions carefully.", "context": "Português: Por favor, anote estas instruções cuidadosamente." },
+                                    { "situation": "Defeating Opponent", "example": "The champion managed to take down his opponent in the first round.", "context": "Português: O campeão conseguiu derrubar seu oponente no primeiro round." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take down' (meaning 'write down') in the **imperative form** with the pronoun **'you'** (implied).",
+                                    "model": "Take down everything the speaker says.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: The police managed to ______ down the criminal.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Eles derrubaram o prédio antigo.",
+                                    "answer": "They took down the old building."
+                                }
+                            },
+                            {
+                                "id": "take-in",
+                                "expression": "Take in 🏠",
+                                "pronunciation": "/teɪk ɪn/",
+                                "whenToUse": "To provide shelter for someone; to understand; to make clothes smaller.",
+                                "situations": [
+                                    { "situation": "Providing Shelter", "example": "They decided to take in a stray cat.", "context": "Português: Eles decidiram abrigar um gato de rua." },
+                                    { "situation": "Understanding", "example": "It was a lot of information to take in.", "context": "Português: Foi muita informação para assimilar." },
+                                    { "situation": "Tailoring", "example": "This dress is too big; I need to take it in.", "context": "Português: Este vestido está muito grande; preciso apertá-lo." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take in' (meaning 'provide shelter') in the **past simple tense** with the pronoun **'she'**.",
+                                    "model": "She took in her nephew after his parents moved away.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: I couldn't ______ in all the details of the complex plan.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Eles abrigaram o refugiado.",
+                                    "answer": "They took in the refugee."
+                                }
+                            },
+                            {
+                                "id": "take-out",
+                                "expression": "Take out 🥡",
+                                "pronunciation": "/teɪk aʊt/",
+                                "whenToUse": "To remove something; to go on a date; to get food from a restaurant to eat elsewhere.",
+                                "situations": [
+                                    { "situation": "Removing Item", "example": "Please take out the trash.", "context": "Português: Por favor, tire o lixo." },
+                                    { "situation": "Date", "example": "He asked her to take her out to dinner.", "context": "Português: Ele a convidou para sair para jantar." },
+                                    { "situation": "Food", "example": "Let's order some Chinese take out tonight.", "context": "Português: Vamos pedir comida chinesa para viagem hoje à noite." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take out' (meaning 'remove something') in the **imperative form** with the pronoun **'you'** (implied).",
+                                    "model": "Take out your books and start reading.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: I'm too tired to cook, let's get some ______ out.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Ele tirou o livro da prateleira.",
+                                    "answer": "He took out the book from the shelf."
+                                }
+                            },
+                            {
+                                "id": "take-over",
+                                "expression": "Take over 👑",
+                                "pronunciation": "/teɪk ˈoʊvər/",
+                                "whenToUse": "To assume control of something; to begin to do something that someone else was doing.",
+                                "situations": [
+                                    { "situation": "Business Acquisition", "example": "The smaller company was taken over by a larger corporation.", "context": "Português: A empresa menor foi adquirida por uma corporação maior." },
+                                    { "situation": "Leadership Change", "example": "She will take over as CEO next month.", "context": "Português: Ela assumirá como CEO no próximo mês." },
+                                    { "situation": "Task Delegation", "example": "Can you take over cooking while I finish this call?", "context": "Português: Você pode assumir a cozinha enquanto termino esta ligação?" }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take over' (meaning 'assume control') in the **future simple tense** with the pronoun **'he'**.",
+                                    "model": "He will take over the family business.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: The new manager will ______ over the department next week.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Eles assumiram o controle da empresa.",
+                                    "answer": "They took over the company."
+                                }
+                            },
+                            {
+                                "id": "take-through",
+                                "expression": "Take through 🚶‍♀️",
+                                "pronunciation": "/teɪk θruː/",
+                                "whenToUse": "To explain something to someone in detail, step by step.",
+                                "situations": [
+                                    { "situation": "Instructions", "example": "Can you take me through the new software features?", "context": "Português: Você pode me explicar os novos recursos do software passo a passo?" },
+                                    { "situation": "Process Explanation", "example": "The guide took us through the history of the castle.", "context": "Português: O guia nos explicou a história do castelo em detalhes." },
+                                    { "situation": "Problem Solving", "example": "He took me through the solution to the complex math problem.", "context": "Português: Ele me explicou a solução para o problema de matemática complexo passo a passo." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take through' in the **present simple tense** with the pronoun **'the teacher'**.",
+                                    "model": "The teacher takes us through difficult concepts.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: I'll ______ you through the entire process.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Ele me explicou o plano passo a passo.",
+                                    "answer": "He took me through the plan step by step."
+                                }
+                            },
+                            {
+                                "id": "take-to",
+                                "expression": "Take to ❤️",
+                                "pronunciation": "/teɪk tuː/",
+                                "whenToUse": "To start to like something or someone; to begin a habit.",
+                                "situations": [
+                                    { "situation": "Liking Someone", "example": "I took to my new colleague immediately.", "context": "Português: Eu gostei do meu novo colega imediatamente." },
+                                    { "situation": "Liking Something", "example": "She took to painting very quickly.", "context": "Português: Ela pegou o jeito da pintura muito rapidamente." },
+                                    { "situation": "Developing Habit", "example": "He's taken to waking up early since he started his new job.", "context": "Português: Ele pegou o hábito de acordar cedo desde que começou seu novo emprego." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take to' (meaning 'start to like') in the **past simple tense** with the pronoun **'they'**.",
+                                    "model": "They took to their new neighborhood right away.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: I hope the kids will ______ to their new school.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Ela gostou do novo professor.",
+                                    "answer": "She took to the new teacher."
+                                }
+                            },
+                            {
+                                "id": "take-up-with",
+                                "expression": "Take up with 🗣️",
+                                "pronunciation": "/teɪk ʌp wɪð/",
+                                "whenToUse": "To begin to associate with someone, often someone considered undesirable; to discuss a matter with someone.",
+                                "situations": [
+                                    { "situation": "New Association (negative)", "example": "He's taken up with a bad crowd.", "context": "Português: Ele começou a andar com uma turma ruim." },
+                                    { "situation": "Discussing a Matter", "example": "I need to take up this issue with my manager.", "context": "Português: Preciso discutir este assunto com meu gerente." },
+                                    { "situation": "Seeking Advice", "example": "She decided to take up her concerns with a counselor.", "context": "Português: Ela decidiu levar suas preocupações a um conselheiro." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take up with' (meaning 'discuss a matter') in the **future simple tense** with the pronoun **'I'**.",
+                                    "model": "I will take up this complaint with customer service.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: He decided to ______ up his problem with the school principal.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Ela começou a andar com pessoas estranhas.",
+                                    "answer": "She took up with strange people."
+                                }
+                            },
+                            {
+                                "id": "take-upon-oneself",
+                                "expression": "Take upon oneself 💼",
+                                "pronunciation": "/teɪk əˈpɒn wʌnˈsɛlf/",
+                                "whenToUse": "To accept a responsibility or task, often without being asked.",
+                                "situations": [
+                                    { "situation": "Volunteering", "example": "She took it upon herself to organize the entire event.", "context": "Português: Ela assumiu a responsabilidade de organizar todo o evento." },
+                                    { "situation": "Extra Work", "example": "He took it upon himself to learn a new skill for the team.", "context": "Português: Ele assumiu a responsabilidade de aprender uma nova habilidade para a equipe." },
+                                    { "situation": "Initiative", "example": "Someone had to do it, so I took it upon myself.", "context": "Português: Alguém tinha que fazer, então eu assumi a responsabilidade." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take upon oneself' in the **past simple tense** with the pronoun **'he'**.",
+                                    "model": "He took it upon himself to fix the broken machine.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: She decided to ______ it upon herself to lead the project.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Ele assumiu a tarefa sem hesitação.",
+                                    "answer": "He took it upon himself to do the task without hesitation."
+                                }
+                            },
+                            {
+                                "id": "take-down-a-peg",
+                                "expression": "Take down a peg  humbling 📉",
+                                "pronunciation": "/teɪk daʊn ə pɛɡ/",
+                                "whenToUse": "To humble someone; to make someone less arrogant.",
+                                "situations": [
+                                    { "situation": "Arrogant Behavior", "example": "His recent failure took him down a peg or two.", "context": "Português: Seu fracasso recente o fez baixar a bola." },
+                                    { "situation": "Overconfidence", "example": "The coach had to take the star player down a peg.", "context": "Português: O treinador teve que dar uma lição de humildade no jogador estrela." },
+                                    { "situation": "Reality Check", "example": "Life has a way of taking you down a peg when you get too proud.", "context": "Português: A vida tem um jeito de te fazer baixar a bola quando você fica muito orgulhoso." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take down a peg' in the **past simple tense** with the pronoun **'the experience'**.",
+                                    "model": "The experience took him down a peg.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: Someone needs to ______ that arrogant guy down a peg.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "A derrota o fez baixar a bola.",
+                                    "answer": "The defeat took him down a peg."
+                                }
+                            },
+                            {
+                                "id": "take-for-granted",
+                                "expression": "Take for granted 🙏",
+                                "pronunciation": "/teɪk fɔːr ˈɡrɑːntɪd/",
+                                "whenToUse": "To fail to appreciate someone or something; to assume something is true without questioning.",
+                                "situations": [
+                                    { "situation": "Lack of Appreciation", "example": "Don't take your parents for granted.", "context": "Português: Não dê seus pais como garantidos." },
+                                    { "situation": "Assuming Truth", "example": "We often take our health for granted until we get sick.", "context": "Português: Frequentemente damos nossa saúde como garantida até ficarmos doentes." },
+                                    { "situation": "Relationship", "example": "He took her love for granted, and she left him.", "context": "Português: Ele deu o amor dela como garantido, e ela o deixou." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take for granted' in the **present simple tense** with the pronoun **'people'**.",
+                                    "model": "People often take clean water for granted.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: Never ______ your friends for granted.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Não dê a sua felicidade como garantida.",
+                                    "answer": "Don't take your happiness for granted."
+                                }
+                            },
+                            {
+                                "id": "take-it-easy",
+                                "expression": "Take it easy 😎",
+                                "pronunciation": "/teɪk ɪt ˈiːzi/",
+                                "whenToUse": "To relax; to calm down; also used as a farewell.",
+                                "situations": [
+                                    { "situation": "Relaxation", "example": "It's the weekend, so just take it easy.", "context": "Português: É fim de semana, então apenas relaxe." },
+                                    { "situation": "Calming Down", "example": "Take it easy, there's no need to get angry.", "context": "Português: Calma, não há necessidade de ficar com raiva." },
+                                    { "situation": "Farewell", "example": "See you tomorrow, take it easy!", "context": "Português: Até amanhã, se cuida!" }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take it easy' (meaning 'relax') in the **imperative form** with the pronoun **'you'** (implied).",
+                                    "model": "After a long day, just take it easy.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: The doctor told him to ______ it easy for a few days.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Relaxe e aproveite suas férias.",
+                                    "answer": "Take it easy and enjoy your vacation."
+                                }
+                            },
+                            {
+                                "id": "take-it-or-leave-it",
+                                "expression": "Take it or leave it 🤝",
+                                "pronunciation": "/teɪk ɪt ɔːr liːv ɪt/",
+                                "whenToUse": "Used to indicate that an offer is final and no negotiation is possible.",
+                                "situations": [
+                                    { "situation": "Negotiation", "example": "That's my final offer, take it or leave it.", "context": "Português: Essa é minha oferta final, pegue ou largue." },
+                                    { "situation": "Ultimatum", "example": "You can either accept these terms or not; take it or leave it.", "context": "Português: Você pode aceitar estes termos ou não; pegue ou largue." },
+                                    { "situation": "Limited Choice", "example": "This is the only option available, so take it or leave it.", "context": "Português: Esta é a única opção disponível, então pegue ou largue." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence where someone presents a non-negotiable offer using 'take it or leave it'.",
+                                    "model": "The price is $500, take it or leave it.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: I'm not negotiating, it's a ______ it or leave it situation.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "É pegar ou largar, não há outra opção.",
+                                    "answer": "It's take it or leave it, there's no other option."
+                                }
+                            },
+                            {
+                                "id": "take-pains",
+                                "expression": "Take pains 꼼꼼히",
+                                "pronunciation": "/teɪk peɪnz/",
+                                "whenToUse": "To make a great effort or take great care to do something.",
+                                "situations": [
+                                    { "situation": "Detailed Work", "example": "She took great pains to ensure every detail was perfect.", "context": "Português: Ela se esforçou muito para garantir que cada detalhe estivesse perfeito." },
+                                    { "situation": "Craftsmanship", "example": "The artist took pains with every brushstroke.", "context": "Português: O artista se dedicou a cada pincelada." },
+                                    { "situation": "Writing", "example": "He took pains to write a clear and concise report.", "context": "Português: Ele se esforçou para escrever um relatório claro e conciso." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take pains' in the **past simple tense** with the pronoun **'they'**.",
+                                    "model": "They took pains to prepare the presentation.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: You need to ______ pains to get this right.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Ele se esforçou muito para agradá-la.",
+                                    "answer": "He took great pains to please her."
+                                }
+                            },
+                            {
+                                "id": "take-sides",
+                                "expression": "Take sides ⚖️",
+                                "pronunciation": "/teɪk saɪdz/",
+                                "whenToUse": "To support one person or group in an argument or dispute against another.",
+                                "situations": [
+                                    { "situation": "Argument", "example": "In an argument between friends, it's best not to take sides.", "context": "Português: Em uma discussão entre amigos, é melhor não tomar partido." },
+                                    { "situation": "Conflict", "example": "The teacher refused to take sides in the students' dispute.", "context": "Português: O professor se recusou a tomar partido na disputa dos alunos." },
+                                    { "situation": "Debate", "example": "During the debate, she clearly took sides with the opposition.", "context": "Português: Durante o debate, ela claramente tomou partido da oposição." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take sides' in the **present simple tense** with the pronoun **'I'**.",
+                                    "model": "I never take sides in my children's fights.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: It's difficult not to ______ sides when you know both people.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Você não deveria tomar partido nesta briga.",
+                                    "answer": "You shouldn't take sides in this fight."
+                                }
+                            },
+                            {
+                                "id": "take-stock-of",
+                                "expression": "Take stock of 📊",
+                                "pronunciation": "/teɪk stɒk ɒv/",
+                                "whenToUse": "To review and assess a situation or one's resources.",
+                                "situations": [
+                                    { "situation": "Business Review", "example": "At the end of the year, we take stock of our achievements.", "context": "Português: No final do ano, fazemos um balanço de nossas conquistas." },
+                                    { "situation": "Personal Reflection", "example": "After the big change, I needed time to take stock of my life.", "context": "Português: Após a grande mudança, precisei de tempo para fazer um balanço da minha vida." },
+                                    { "situation": "Project Evaluation", "example": "Let's take stock of our progress before the next phase.", "context": "Português: Vamos fazer um balanço do nosso progresso antes da próxima fase." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take stock of' in the **future simple tense** with the pronoun **'we'**.",
+                                    "model": "We will take stock of our inventory next week.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: It's good to occasionally ______ stock of your goals.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Ela fez um balanço da situação antes de agir.",
+                                    "answer": "She took stock of the situation before acting."
+                                }
+                            },
+                            {
+                                "id": "take-the-bull-by-the-horns",
+                                "expression": "Take the bull by the horns 🐂",
+                                "pronunciation": "/teɪk ðə bʊl baɪ ðə hɔːrnz/",
+                                "whenToUse": "To deal with a difficult or dangerous situation directly and courageously.",
+                                "situations": [
+                                    { "situation": "Facing a Problem", "example": "It's time to take the bull by the horns and confront the issue.", "context": "Português: É hora de pegar o touro pelos chifres e enfrentar o problema." },
+                                    { "situation": "Difficult Decision", "example": "She decided to take the bull by the horns and ask for a raise.", "context": "Português: Ela decidiu pegar o touro pelos chifres e pedir um aumento." },
+                                    { "situation": "Leadership", "example": "A true leader takes the bull by the horns in a crisis.", "context": "Português: Um verdadeiro líder pega o touro pelos chifres em uma crise." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take the bull by the horns' in the **past simple tense** with the pronoun **'he'**.",
+                                    "model": "He took the bull by the horns and solved the problem.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: Don't avoid the challenge, just ______ the bull by the horns.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Ela decidiu enfrentar o problema de frente.",
+                                    "answer": "She decided to take the bull by the horns."
+                                }
+                            },
+                            {
+                                "id": "take-the-cake",
+                                "expression": "Take the cake 🍰",
+                                "pronunciation": "/teɪk ðə keɪk/",
+                                "whenToUse": "To be the most outstanding or remarkable of its kind (often used ironically for something bad).",
+                                "situations": [
+                                    { "situation": "Exceptional Achievement", "example": "Her performance in the play really took the cake.", "context": "Português: A atuação dela na peça realmente foi a melhor." },
+                                    { "situation": "Extreme Example (ironic)", "example": "His excuse for being late really takes the cake.", "context": "Português: A desculpa dele para se atrasar realmente superou tudo." },
+                                    { "situation": "Worst Example (ironic)", "example": "Of all the bad ideas, that one really takes the cake.", "context": "Português: De todas as ideias ruins, essa realmente superou todas." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take the cake' (ironically for something bad) in the **present simple tense** with the noun **'his arrogance'**.",
+                                    "model": "His arrogance really takes the cake.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: That absurd suggestion really ______ the cake.",
+                                        "answer": "takes"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "A história dele superou todas as outras.",
+                                    "answer": "His story took the cake."
+                                }
+                            },
+                            {
+                                "id": "take-the-fall",
+                                "expression": "Take the fall 🍂",
+                                "pronunciation": "/teɪk ðə fɔːl/",
+                                "whenToUse": "To accept blame or punishment for a mistake or crime, often to protect someone else.",
+                                "situations": [
+                                    { "situation": "Protecting Someone", "example": "He took the fall for his brother's mistake.", "context": "Português: Ele assumiu a culpa pelo erro do irmão." },
+                                    { "situation": "Corporate Scandal", "example": "Someone had to take the fall for the company's financial scandal.", "context": "Português: Alguém tinha que assumir a culpa pelo escândalo financeiro da empresa." },
+                                    { "situation": "Unjust Blame", "example": "It wasn't his fault, but he took the fall anyway.", "context": "Português: Não foi culpa dele, mas ele assumiu a culpa mesmo assim." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take the fall' in the **past simple tense** with the pronoun **'she'**.",
+                                    "model": "She took the fall for the entire team.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: No one wanted to ______ the fall for the failed project.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Ele assumiu a culpa pelo crime.",
+                                    "answer": "He took the fall for the crime."
+                                }
+                            },
+                            {
+                                "id": "take-the-rough-with-the-smooth",
+                                "expression": "Take the rough with the smooth 🎢",
+                                "pronunciation": "/teɪk ðə rʌf wɪð ðə smuːð/",
+                                "whenToUse": "To accept the bad parts of a situation along with the good parts.",
+                                "situations": [
+                                    { "situation": "Life's Challenges", "example": "In any long-term relationship, you have to take the rough with the smooth.", "context": "Português: Em qualquer relacionamento de longo prazo, você tem que aceitar o bom e o ruim." },
+                                    { "situation": "Career Path", "example": "Being an entrepreneur means taking the rough with the smooth.", "context": "Português: Ser um empreendedor significa aceitar o bom e o ruim." },
+                                    { "situation": "Travel", "example": "Traveling can be unpredictable; you just have to take the rough with the smooth.", "context": "Português: Viajar pode ser imprevisível; você apenas tem que aceitar o bom e o ruim." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take the rough with the smooth' in the **present simple tense** with the pronoun **'we'**.",
+                                    "model": "We learn to take the rough with the smooth in life.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: You have to ______ the rough with the smooth in this job.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "É preciso aceitar o bom e o ruim na vida.",
+                                    "answer": "You have to take the rough with the smooth in life."
+                                }
+                            },
+                            {
+                                "id": "take-to-heart",
+                                "expression": "Take to heart ❤️‍🩹",
+                                "pronunciation": "/teɪk tuː hɑːrt/",
+                                "whenToUse": "To consider something seriously and be affected by it, often emotionally.",
+                                "situations": [
+                                    { "situation": "Advice", "example": "You should take his advice to heart; he knows what he's talking about.", "context": "Português: Você deveria levar o conselho dele a sério; ele sabe do que está falando." },
+                                    { "situation": "Criticism", "example": "Don't take criticism too much to heart; learn from it.", "context": "Português: Não leve a crítica muito a sério; aprenda com ela." },
+                                    { "situation": "Warning", "example": "She took the doctor's warning to heart and changed her lifestyle.", "context": "Português: Ela levou o aviso do médico a sério e mudou seu estilo de vida." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take to heart' in the **past simple tense** with the pronoun **'she'**.",
+                                    "model": "She took his kind words to heart.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: It's important to ______ good advice to heart.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Eu levei as palavras dela a sério.",
+                                    "answer": "I took her words to heart."
+                                }
+                            },
+                            {
+                                "id": "take-your-time",
+                                "expression": "Take your time ⏳",
+                                "pronunciation": "/teɪk jɔːr taɪm/",
+                                "whenToUse": "To do something slowly, without rushing.",
+                                "situations": [
+                                    { "situation": "Complex Task", "example": "Don't rush the painting; take your time and do it well.", "context": "Português: Não apresse a pintura; leve o seu tempo e faça bem." },
+                                    { "situation": "Decision Making", "example": "There's no pressure; take your time to decide.", "context": "Português: Não há pressão; leve o seu tempo para decidir." },
+                                    { "situation": "Enjoying an Activity", "example": "Enjoy your meal, take your time.", "context": "Português: Aproveite sua refeição, leve o seu tempo." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take your time' in the **imperative form** with the pronoun **'you'** (implied).",
+                                    "model": "Take your time with the exam, there's no rush.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: Please ______ your time to explain everything clearly.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Leve o seu tempo para terminar o trabalho.",
+                                    "answer": "Take your time to finish the work."
+                                }
+                            },
+                            {
+                                "id": "take-your-word-for-it",
+                                "expression": "Take your word for it 🤝",
+                                "pronunciation": "/teɪk jɔːr wɜːrd fɔːr ɪt/",
+                                "whenToUse": "To believe what someone says without needing proof.",
+                                "situations": [
+                                    { "situation": "Trust", "example": "I'll take your word for it that the report is accurate.", "context": "Português: Vou acreditar na sua palavra de que o relatório está preciso." },
+                                    { "situation": "Assurance", "example": "You said you'd be on time, and I'll take your word for it.", "context": "Português: Você disse que chegaria na hora, e vou acreditar na sua palavra." },
+                                    { "situation": "Lack of Proof", "example": "I don't have time to check, so I'll just take your word for it.", "context": "Português: Não tenho tempo para verificar, então vou apenas acreditar na sua palavra." }
+                                ],
+                                "participativeExercise": {
+                                    "prompt": "Write a sentence using 'take your word for it' in the **present simple tense** with the pronoun **'I'**.",
+                                    "model": "I'll take your word for it that the movie is good.",
+                                    "fillInTheBlanks": {
+                                        "prompt": "Complete the sentence: Since you're an expert, I'll ______ your word for it.",
+                                        "answer": "take"
+                                    }
+                                },
+                                "translationExercise": {
+                                    "ptToEn": "Eu vou acreditar na sua palavra.",
+                                    "answer": "I will take your word for it."
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            currentCategoryIndex: 0, // 0 for Most Common, 1 for More Idiomatic
+            currentExpressionIndex: 0,
+            currentTab: 1 // 1 for Expression, 2 for Situations
+        };
+
+        // Helper to get current category and expression
+        function getCurrentCategory() {
+            return state.currentLesson.categories[state.currentCategoryIndex];
+        }
+
+        function getCurrentExpression() {
+            const currentCategory = getCurrentCategory();
+            return currentCategory.expressions[state.currentExpressionIndex];
+        }
+
+        // ========== STATE MUTATION FUNCTIONS ==========
+        function switchCategory(newCategoryIndex) {
+            state.currentCategoryIndex = newCategoryIndex;
+            state.currentExpressionIndex = 0; // Reset expression index when switching category
+            state.currentTab = 1; // Always go to Expression tab when switching category
+            render();
+        }
+
+        function switchExpression(newExpressionIndex) {
+            state.currentExpressionIndex = newExpressionIndex;
+            state.currentTab = 1; // Always go to Expression tab when switching expression
+            render();
+        }
+
+        function switchTab(newTab) {
+            state.currentTab = newTab;
+            render();
+        }
+
+        function navigateExpression(direction) { // direction: 1 for next, -1 for back
+            const currentCategory = getCurrentCategory();
+            const totalExpressions = currentCategory.expressions.length;
+            let newIndex = state.currentExpressionIndex + direction;
+
+            if (newIndex < 0) {
+                newIndex = totalExpressions - 1; // Loop to last expression
+            } else if (newIndex >= totalExpressions) {
+                newIndex = 0; // Loop to first expression
+            }
+            switchExpression(newIndex);
+        }
+
+        // ========== EXERCISE CHECK FUNCTIONS ==========
+        function checkFillInTheBlanks(inputElementId, answer) {
+            const input = document.getElementById(inputElementId).value.trim().toLowerCase();
+            const feedbackElement = document.getElementById(inputElementId + '-feedback');
+
+            if (input === answer.toLowerCase()) {
+                feedbackElement.textContent = "Correct! 🎉";
+                feedbackElement.className = "feedback-message correct";
+            } else {
+                feedbackElement.textContent = "Try again. 🤔";
+                feedbackElement.className = "feedback-message incorrect";
+            }
+            feedbackElement.style.display = 'block';
+        }
+
+        function checkTranslation(inputElementId, answer) {
+            const input = document.getElementById(inputElementId).value.trim().toLowerCase();
+            const feedbackElement = document.getElementById(inputElementId + '-feedback');
+
+            // Simple check: case-insensitive and trimmed comparison
+            if (input === answer.toLowerCase()) {
+                feedbackElement.textContent = "Correct! 🎉";
+                feedbackElement.className = "feedback-message correct";
+            } else {
+                feedbackElement.textContent = "Try again. 🤔";
+                feedbackElement.className = "feedback-message incorrect";
+            }
+            feedbackElement.style.display = 'block';
+        }
+
+
+        // ========== RENDER FUNCTIONS ==========
+        function renderTabContent() {
+            const currentCategory = getCurrentCategory();
+            const currentExpr = getCurrentExpression();
+
+            // Render the main expression card
+            const expressionCardHtml = `
+                <div class="expression-card">
+                    <h3 class="expression-card-title">${currentExpr.expression}</h3>
+                    <p class="expression-card-pronunciation">${currentExpr.pronunciation}</p>
+                    <p class="expression-card-description">${currentExpr.whenToUse}</p>
+                </div>
+            `;
+
+            // Render the participative exercise section
+            const participativeExerciseHtml = `
+                <div class="exercise-section">
+                    <h4>✍️ Participative Exercise</h4>
+                    <p>${currentExpr.participativeExercise.prompt}</p>
+                    <textarea placeholder="Write your sentence here..."></textarea>
+                    <!-- Model answer for sentence writing is removed -->
+
+                    <div class="fill-in-blanks-section">
+                        <p>${currentExpr.participativeExercise.fillInTheBlanks.prompt}</p>
+                        <div class="input-group">
+                            <input type="text" id="fillInBlanksInput" placeholder="Type your answer here...">
+                            <button class="check-btn" onclick="checkFillInTheBlanks('fillInBlanksInput', '${currentExpr.participativeExercise.fillInTheBlanks.answer}')">Check</button>
+                        </div>
+                        <div id="fillInBlanksInput-feedback" class="feedback-message"></div>
+                        <!-- Model answer for fill-in-the-blanks is removed -->
+                    </div>
+                </div>
+            `;
+
+            // Render the translation exercise section
+            const translationExerciseHtml = `
+                <div class="exercise-section">
+                    <h4>🌐 Translation Exercise</h4>
+                    <p>Translate to English: "${currentExpr.translationExercise.ptToEn}"</p>
+                    <div class="input-group">
+                        <textarea id="translationInput" placeholder="Write your English translation here..."></textarea>
+                        <button class="check-btn" onclick="checkTranslation('translationInput', '${currentExpr.translationExercise.answer}')">Check</button>
+                    </div>
+                    <div id="translationInput-feedback" class="feedback-message"></div>
+                    <!-- Model answer for translation is removed -->
+                </div>
+            `;
+
+            // Render the expression selector buttons for the current category
+            const expressionSelectorHtml = `
+                <div class="expression-selector">
+                    ${currentCategory.expressions.map((expr, index) => `
+                        <button
+                            class="btn ${state.currentExpressionIndex === index ? 'active' : ''}"
+                            onclick="switchExpression(${index})"
+                        >
+                            ${expr.expression}
+                        </button>
+                    `).join('')}
+                </div>
+            `;
+
+            // Render the situations grid for the current expression
+            const situationsGridHtml = `
+                <div class="situations-grid">
+                    ${currentExpr.situations.map((situation) => `
+                        <div class="situation-card">
+                            <h3 class="situation-title">${situation.situation}</h3>
+                            <p class="example">${situation.example}</p>
+                            <p class="context">Português: ${situation.context}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+
+            // Render the category-specific tab navigation (Expression/Situations)
+            const categoryTabNavigationHtml = `
+                <div class="category-tab-navigation">
+                    <button class="category-tab-btn ${state.currentTab === 1 ? 'active' : ''}" onclick="switchTab(1)">
+                        Expression
+                    </button>
+                    <button class="category-tab-btn ${state.currentTab === 2 ? 'active' : ''}" onclick="switchTab(2)">
+                        Situations
+                    </button>
+                </div>
+            `;
+
+            return `
+                <div class="content-panel">
+                    <h2 class="panel-title">Explore the Verb "To Take"</h2>
+
+                    <!-- Category Selector (Global, above all content) -->
+                    <div class="tab-navigation">
+                        ${state.currentLesson.categories.map((category, index) => `
+                            <button class="tab-btn ${state.currentCategoryIndex === index ? 'active' : ''}" onclick="switchCategory(${index})">
+                                ${category.name}
+                            </button>
+                        `).join('')}
+                    </div>
+
+                    <!-- Current Category Content -->
+                    <div class="expression-category">
+                        <h3 class="expression-category-title">${currentCategory.name}</h3>
+                        ${categoryTabNavigationHtml} <!-- Nested tabs here -->
+
+                        ${state.currentTab === 1 ? `
+                            ${expressionCardHtml}
+                            ${participativeExerciseHtml}
+                            ${translationExerciseHtml}
+                            ${expressionSelectorHtml}
+                        ` : `
+                            ${situationsGridHtml}
+                        `}
+                    </div>
+                </div>
+            `;
+        }
+
+        function render() {
+            const app = document.getElementById('app');
+            const currentLesson = state.currentLesson;
+
+            app.innerHTML = `
+                <div class="app-container">
+                    <div class="neon-top-bar"></div>
+                    <main class="app-main">
+                        <div class="lesson-view">
+                            <div class="lesson-header">
+                                <h1 class="lesson-title">${currentLesson.title}</h1>
+                                <p class="lesson-description">${currentLesson.description}</p>
+                            </div>
+
+                            <!-- Main Content Area (now includes category selector and nested tabs) -->
+                            ${renderTabContent()}
+
+                            <!-- Footer Navigation (Back/Next) -->
+                            <div class="tab-footer">
+                                <button class="nav-btn" onclick="navigateExpression(-1)">
+                                    <span class="material-icons">arrow_back</span> Back
+                                </button>
+                                <button class="nav-btn" onclick="navigateExpression(1)">
+                                    Next <span class="material-icons">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            `;
+        }
+
+        // Initial render call
+        document.addEventListener('DOMContentLoaded', render);
+    </script>
+</body>
+</html>
